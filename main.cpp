@@ -2,6 +2,6 @@
 
 int main()
 {
-	std::cout << "Hello world" << std::endl;
+	std::cout << "Welcome to intro to programming!" << std::endl;
 	return 0;
 }
