@@ -12,5 +12,30 @@ int main()
 	// https://www.asciitable.com/
 	character = character + 1;
 	std::cout << "Final character: " << character << std::endl;
+
+	std::cout << "Please enter any number" << std::endl;
+	int number;
+	std::cin >> number;
+	std::cout << "Initial number: " << number << std::endl;
+	std::cout << "Initial number + 2 = " << number + 2 << std::endl;
+	std::cout << "Initial number - 2 = " << number - 2 << std::endl;
+	std::cout << "Initial number * 2 = " << number * 2 << std::endl;
+	std::cout << "Initial number / 2 = " << number / 2 << std::endl;
+	// Integers (int) can only be whole numbers.
+	// Anytime they are decimals, they get truncated (rounded down).
+	// For example, 5 / 2 should be 2.5, but 2.5 rounded down = 2
+	// Once again, even if the number is high like 2.75, it becomes 2!
+	int number2 = 2.75;
+	std::cout << number2 << std::endl;
+
+	// float on the other hand can be used to represent decimals the way we expect!
+	float decimalNumber;
+	std::cin >> decimalNumber;
+	std::cout << "Initial decimal number: " << decimalNumber << std::endl;
+	std::cout << "Initial decimal number + 2 = " << decimalNumber + 2.0f << std::endl;
+	std::cout << "Initial decimal number - 2 = " << decimalNumber - 2.0f << std::endl;
+	std::cout << "Initial decimal number * 2 = " << decimalNumber * 2.0f << std::endl;
+	std::cout << "Initial decimal number / 2 = " << decimalNumber / 2.0f << std::endl;
+
 	return 0;
 }
