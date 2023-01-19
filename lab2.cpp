@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 
 int main()
 {
@@ -31,4 +31,4 @@ int main()
 	std::cout << "Product: " << product << std::endl;
 
 	return 0;
-}
+}*/

@@ -6,14 +6,14 @@ int main()
 {
 	// Its important to know the capacities of our datatypes
 	// We can query the minimums and maximums with number_limits.
-	unsigned int maxWholeNumber = std::numeric_limits<unsigned int>::max();
-	std::cout << maxWholeNumber << std::endl;
-	char largestSignedCharacter = std::numeric_limits<char>::max();
-	unsigned char largestCharacter = std::numeric_limits<unsigned char>::max();
-	std::cout << (int)largestSignedCharacter << std::endl;
-	std::cout << (int)largestCharacter << std::endl;
-	float largestDecimalNumber = std::numeric_limits<float>::max();
-	std::cout << largestDecimalNumber << std::endl;
+	//int maxWholeNumber = std::numeric_limits< int>::max();
+	//std::cout << maxWholeNumber << std::endl;
+	//char largestSignedCharacter = std::numeric_limits<char>::min();
+	//unsigned char largestCharacter = std::numeric_limits<unsigned char>::min();
+	//std::cout << (int)largestSignedCharacter << std::endl;
+	//std::cout << (int)largestCharacter << std::endl;
+	//float largestDecimalNumber = std::numeric_limits<float>::max();
+	//std::cout << largestDecimalNumber << std::endl;
 
 	std::cout << "Please enter any character" << std::endl;
 	char character;
@@ -51,4 +51,5 @@ int main()
 	std::cout << "Initial decimal number / 2 = " << decimalNumber / 2.0f << std::endl;
 
 	return 0;
-}*/
+}
+*/
