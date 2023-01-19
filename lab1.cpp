@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include <limits>
 
@@ -50,4 +51,4 @@ int main()
 	std::cout << "Initial decimal number / 2 = " << decimalNumber / 2.0f << std::endl;
 
 	return 0;
-}
+}*/
