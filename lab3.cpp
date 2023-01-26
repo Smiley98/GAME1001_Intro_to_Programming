@@ -39,6 +39,19 @@ int main()
 	cout << "The monster took " << playerDamage << " damage." << endl
 		<< "Monster health: " << monsterHealth << "." << endl;
 
+	// Win condition (player or monster health must be less than or equal to zero)
+	if (playerHealth <= 0 || monsterHealth <= 0)
+	{
+		if (monsterHealth <= 0)
+			cout << "Player won the fight!" << endl;
+		else
+			cout << "Monster won the fight!" << endl;
+	}
+	else
+	{
+		cout << "Its a draw..." << endl;
+	}
+
 	return 0;
 }
 
