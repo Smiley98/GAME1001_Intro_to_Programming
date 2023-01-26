@@ -29,6 +29,11 @@ int main()
 	// Step 2. Run battle
 	cout << endl << "The monster ferociously lunges at the player" << endl;
 	playerHealth -= monsterDamage;
+	cout << "The player took " << monsterDamage << " damage." << endl;
+
+	cout << "The player fights back with aggression" << endl;
+	monsterHealth -= playerDamage;
+	cout << "The monster took " << playerDamage << " damage." << endl;
 
 	return 0;
 }
