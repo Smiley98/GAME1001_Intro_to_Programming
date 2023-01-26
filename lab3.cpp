@@ -42,7 +42,9 @@ int main()
 	// Win condition (player or monster health must be less than or equal to zero)
 	if (playerHealth <= 0 || monsterHealth <= 0)
 	{
-		if (monsterHealth <= 0)
+		if (playerHealth <= 0 && monsterHealth <= 0)
+			cout << "Both parties lost the fight" << endl;
+		else if (monsterHealth <= 0)
 			cout << "Player won the fight!" << endl;
 		else
 			cout << "Monster won the fight!" << endl;
@@ -54,6 +56,16 @@ int main()
 
 	return 0;
 }
+
+// booleans are true/false types, for example 
+// bool condition = true;
+// numbers are treated as booleans within conditions
+// any non-zero number is true, otherwise 0 = false!
+//int number = 0;
+//if (number)
+//	cout << "true";
+//else
+//	cout << "false";
 
 // TOO MUCH COMMENTING:
 //int playerHealth = 0;									// declare player health variable
