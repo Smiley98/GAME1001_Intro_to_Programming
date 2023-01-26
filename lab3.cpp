@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 
 using namespace std;
 
@@ -55,7 +55,7 @@ int main()
 	}
 
 	return 0;
-}
+}*/
 
 // booleans are true/false types, for example 
 // bool condition = true;
