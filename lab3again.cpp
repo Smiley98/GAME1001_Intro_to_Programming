@@ -35,6 +35,17 @@ int main()
 	monsterHealth -= playerDamage;
 	cout << "The monster took " << playerDamage << " damage." << endl;
 
+	// Step 3. Determine the outcome
+	//if (monsterHealth < playerHealth) // this works too
+	if (playerHealth > monsterHealth)
+	{
+		cout << "Player Wins!" << endl;
+	}
+	else
+	{
+		cout << "Monster Wins!" << endl;
+	}
+
 	return 0;
 }
 
