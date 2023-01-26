@@ -1,7 +1,28 @@
 #include <iostream>
 
+using namespace std;
+
 int main()
 {
+	cout << "Welcome to battle simulator 2023" << endl
+	     << "Preparing Player for battle..." << endl << endl;
+
+	int playerHealth = 0;
+	cout << "Please enter the player's health: " << endl;
+	cin >> playerHealth;
+
+	int playerDamage = 0;
+	cout << "Please enter the player's damage: " << endl << endl;
+	cin >> playerDamage;
+
+	int monsterHealth = 0;
+	cout << "Please enter the monster's health: " << endl;
+	cin >> monsterHealth;
+
+	int monsterDamage = 0;
+	cout << "Please enter the monster's damage: " << endl << endl;
+	cin >> monsterDamage;
+
 	return 0;
 }
 
