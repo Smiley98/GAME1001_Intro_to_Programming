@@ -36,17 +36,19 @@ int main()
 	cout << "The monster took " << playerDamage << " damage." << endl;
 
 	// Step 3. Determine the outcome
-	//if (monsterHealth < playerHealth) // this works too
-	if (playerHealth > monsterHealth)
+	if (playerHealth <= 0 || monsterHealth <= 0)
 	{
-		cout << "Player Wins!" << endl;
+		if (playerHealth <= 0 && monsterHealth <= 0)
+			cout << "Both parties won, but they paid with their lives..." << endl;
+		else if (playerHealth > monsterHealth)
+			cout << "Player wins!" << endl;
+		else
+			cout << "Monster wins!" << endl;
 	}
 	else
 	{
-		cout << "Monster Wins!" << endl;
+		cout << "Both parties are still standing... Its a draw!" << endl;
 	}
 
 	return 0;
 }
-
-// playerHealth -= monsterDamage; is the exact same as playerHealth = playerHealth - monsterDamage;
