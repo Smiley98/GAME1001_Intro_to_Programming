@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
 
 	std::cout << "Number 1:" << std::endl;
 	std::cin >> number1;
-	std::cout << "You entered " << number1 << " for number 1." << std::endl << std::endl;
+	std::cout << "You entered " << number1 << " for number 1." << std::endl;
 	
 	std::cout << "Number 2:" << std::endl;
 	std::cin >> number2;
@@ -37,3 +37,4 @@ int main()
 
 	return 0;
 }
+*/
