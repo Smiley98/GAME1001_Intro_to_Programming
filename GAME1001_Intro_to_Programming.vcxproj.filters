@@ -24,10 +24,7 @@
     <ClCompile Include="lab3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lab2again.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="lab3again.cpp">
+    <ClCompile Include="lab1Solution.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
