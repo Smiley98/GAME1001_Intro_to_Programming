@@ -1,4 +1,5 @@
-/*#include <iostream>
+/*
+#include <iostream>
 
 using namespace std;
 
@@ -31,7 +32,7 @@ int main()
 	cout << "The monster fearsomely lunges at the player!" << endl;
 	playerHealth -= monsterDamage;
 	cout << "The player took " << monsterDamage << " damage." << endl
-		 << "Player health: " << playerHealth << "." << endl << endl;
+		<< "Player health: " << playerHealth << "." << endl << endl;
 
 	// Player attacks monster
 	cout << "The player fights back in retaliation!" << endl;
@@ -55,7 +56,7 @@ int main()
 	}
 
 	return 0;
-}*/
+}//*/
 
 // booleans are true/false types, for example 
 // bool condition = true;
