@@ -1,4 +1,4 @@
-/*
+///*
 #include <iostream>
 
 using namespace std;
@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	cout << "Welcome to battle simulator 2023" << endl
-		<< "Preparing Player for battle..." << endl;
+		 << "Preparing Player for battle..." << endl;
 
 	// Input player health
 	int playerHealth = 0;
@@ -28,48 +28,22 @@ int main()
 	cout << "Please enter the monster's damage: " << endl;
 	cin >> monsterDamage;
 
-	int turnCount = 0;
-	while (true)
-	{
-		cout << endl << "Please enter the number of turns: " << endl;
-		cin >> turnCount;
-
-		int testPlayerHealth = playerHealth;
-		int testMonsterHealth = monsterHealth;
-		int minTurnCount = 0;
-		cout << "Calculating battle simulation..." << endl;
-
-		while (testPlayerHealth > 0 || testMonsterHealth > 0)
-		{
-			minTurnCount++;
-			testPlayerHealth -= monsterDamage;
-			testMonsterHealth -= playerDamage;
-		}
-		
-		// Test if there were enough turns for either the player or the monster to emerge victious!
-		if (minTurnCount <= turnCount)
-			break;
-		else
-			cout << "You need " << minTurnCount - turnCount << " more turns for a battle to the death!" << endl;
-	}
-
-	cout << "PREPARE FOR BATTLE!!!" << endl;
-	for (int turn = 0; turn < turnCount; turn++)
+	// While at least one fighter is alive, keep fighting
+	while (playerHealth > 0 && monsterHealth > 0)
 	{
 		// Monster attacks player
 		cout << endl << "The monster fearsomely lunges at the player!" << endl;
 		playerHealth -= monsterDamage;
 		cout << "The player took " << monsterDamage << " damage." << endl
-			<< "Player health: " << playerHealth << "." << endl;
+			<< "Player health: " << playerHealth << "." << endl << endl;
 
 		// Player attacks monster
-		cout << endl << "The player fights back in retaliation!" << endl;
+		cout << "The player fights back in retaliation!" << endl;
 		monsterHealth -= playerDamage;
 		cout << "The monster took " << playerDamage << " damage." << endl
 			<< "Monster health: " << monsterHealth << "." << endl;
 	}
 
-	// Win condition (player or monster health must be less than or equal to zero)
 	if (playerHealth <= 0 && monsterHealth <= 0)
 		cout << "Both parties lost the fight" << endl;
 	else if (monsterHealth <= 0)

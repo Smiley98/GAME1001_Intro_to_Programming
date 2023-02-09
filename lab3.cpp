@@ -5,6 +5,21 @@ using namespace std;
 
 int main()
 {
+	// booleans (bool) are just storable true or false values.
+	// They're useful if we want to check the status of something multiple times,
+	// Like determining the winner of the battle!
+	//bool greater = 2 > 1;
+	//bool lesser = 2 < 1;
+	//
+	//if (lesser)
+	//{
+	//	cout << "Condition was true :)" << endl;
+	//}
+	//else
+	//{
+	//	cout << "Condition was false :(" << endl;
+	//}
+
 	cout << "Welcome to battle simulator 2023" << endl
 	     << "Preparing Player for battle..." << endl << endl;
 
@@ -41,11 +56,13 @@ int main()
 		<< "Monster health: " << monsterHealth << "." << endl;
 
 	// Win condition (player or monster health must be less than or equal to zero)
-	if (playerHealth <= 0 || monsterHealth <= 0)
+	bool playerDead = playerHealth <= 0;
+	bool monsterDead = monsterHealth <= 0;
+	if (playerDead || monsterDead)
 	{
-		if (playerHealth <= 0 && monsterHealth <= 0)
+		if (playerDead && monsterDead)
 			cout << "Both parties lost the fight" << endl;
-		else if (monsterHealth <= 0)
+		else if (monsterDead)
 			cout << "Player won the fight!" << endl;
 		else
 			cout << "Monster won the fight!" << endl;
