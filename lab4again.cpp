@@ -29,32 +29,28 @@ int main()
 	cin >> monsterDamage;
 
 	int turnCount = 0;
-	cout << endl << "Please enter the number of turns: " << endl;
-	cin >> turnCount;
-
-	const int playerMaxHealth = playerHealth;
-	const int monsterMaxHealth = monsterHealth;
-
-	// Test simulation
-	for (int turn = 0; turn < turnCount; turn++)
+	while (true)
 	{
-		playerHealth -= monsterDamage;
-		monsterHealth -= playerDamage;
+		cout << endl << "Please enter the number of turns: " << endl;
+		cin >> turnCount;
+
+		// Test simulation
+		int testPlayerHealth = playerHealth;
+		int testMonsterHealth = monsterHealth;
+		for (int turn = 0; turn < turnCount; turn++)
+		{
+			testPlayerHealth -= monsterDamage;
+			testMonsterHealth -= playerDamage;
+		}
+
+		// We have enough turns if there's at least 1 casualty
+		if (testPlayerHealth <= 0 || testMonsterHealth <= 0)
+		{
+			break;
+		}
 	}
 
-	if (playerHealth > 0 && monsterHealth > 0)
-	{
-		cout << "Not enough turns. Exiting program" << endl;
-		return -1;
-	}
-	else
-	{
-		cout << "PREPARE FOR BATTLE!!!" << endl;
-		playerHealth = playerMaxHealth;
-		monsterHealth = monsterMaxHealth;
-	}
-
-	// Actual battle simulation
+	cout << "PREPARE FOR BATTLE!!!" << endl;
 	for (int turn = 0; turn < turnCount; turn++)
 	{
 		// Monster attacks player
