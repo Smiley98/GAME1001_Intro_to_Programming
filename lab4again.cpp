@@ -35,18 +35,23 @@ int main()
 		cin >> turnCount;
 
 		// Test simulation
+		int minTurnCount = 0;
 		int testPlayerHealth = playerHealth;
 		int testMonsterHealth = monsterHealth;
-		for (int turn = 0; turn < turnCount; turn++)
+		while (testPlayerHealth > 0 && testMonsterHealth > 0)
 		{
+			minTurnCount++;
 			testPlayerHealth -= monsterDamage;
 			testMonsterHealth -= playerDamage;
 		}
 
-		// We have enough turns if there's at least 1 casualty
-		if (testPlayerHealth <= 0 || testMonsterHealth <= 0)
+		if (turnCount >= minTurnCount)
 		{
 			break;
+		}
+		else
+		{
+			cout << "There needs to be at least " << minTurnCount - turnCount << " turns for a battle to the death!" << endl;
 		}
 	}
 
@@ -65,22 +70,6 @@ int main()
 		cout << "The monster took " << playerDamage << " damage." << endl
 			<< "Monster health: " << monsterHealth << "." << endl;
 	}
-
-	// While at least one fighter is alive, keep fighting
-	//while (playerHealth > 0 && monsterHealth > 0)
-	//{
-	//	// Monster attacks player
-	//	cout << endl << "The monster fearsomely lunges at the player!" << endl;
-	//	playerHealth -= monsterDamage;
-	//	cout << "The player took " << monsterDamage << " damage." << endl
-	//		<< "Player health: " << playerHealth << "." << endl << endl;
-	//
-	//	// Player attacks monster
-	//	cout << "The player fights back in retaliation!" << endl;
-	//	monsterHealth -= playerDamage;
-	//	cout << "The monster took " << playerDamage << " damage." << endl
-	//		<< "Monster health: " << monsterHealth << "." << endl;
-	//}
 
 	if (playerHealth <= 0 && monsterHealth <= 0)
 		cout << "Both parties lost the fight" << endl;
