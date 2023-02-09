@@ -8,10 +8,6 @@ int main()
 	cout << "Welcome to battle simulator 2023" << endl
 		<< "Preparing Player for battle..." << endl;
 
-	int turnCount = 0;
-	cout << endl << "Please enter the number of turns: " << endl;
-	cin >> turnCount;
-
 	// Input player health
 	int playerHealth = 0;
 	cout << endl << "Please enter the player's health: " << endl;
@@ -31,6 +27,34 @@ int main()
 	int monsterDamage = 0;
 	cout << "Please enter the monster's damage: " << endl;
 	cin >> monsterDamage;
+
+	int turnCount = 0;
+	cout << endl << "Please enter the number of turns: " << endl;
+	cin >> turnCount;
+
+	const int playerMaxHealth = playerHealth;
+	const int monsterMaxHealth = monsterHealth;
+
+	cout << "Calculating battle simulation..." << endl;
+	for (int turn = 0; turn < turnCount; turn++)
+	{
+		playerHealth -= monsterDamage;
+		monsterHealth -= playerDamage;
+	}
+
+	// Test if there were enough turns for either the player or the monster to emerge victious!
+	bool runBattle = playerHealth <= 0 || monsterHealth <= 0;
+	if (!runBattle)
+	{
+		cout << "Not enough turns. Terminating program" << endl;
+		return 0;
+	}
+	else
+	{
+		playerHealth = playerMaxHealth;
+		monsterHealth = monsterMaxHealth;
+		cout << "PREPARE FOR BATTLE!!!" << endl;
+	}
 
 	for (int turn = 0; turn < turnCount; turn++)
 	{
