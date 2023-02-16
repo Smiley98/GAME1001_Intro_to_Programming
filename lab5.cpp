@@ -1,6 +1,24 @@
 #include <string>
+#include "IntegerMath.h"
+#include "DecimalMath.h"
 
 using namespace std;
+
+string Letters();
+char Letter();
+double BigDecimal();
+float Decimal();
+int Integer();
+
+int main()
+{
+	int sum = Add(1, 2);
+	int difference = Sub(1, 2);
+	int product = Mul(1, 2);
+	int quotient = Div(1, 2);
+	float decimalQuotient = Div(1.0f, 2.0f);
+	return 0;
+}
 
 string Letters()
 {
@@ -27,12 +45,10 @@ int Integer()
 	return -100;
 }
 
-int main()
-{
-	int integer = Integer();
-	float decimal = Decimal();
-	double bigDecimal = BigDecimal();
-	char letter = Letter();
-	string letters = Letters();
-	return integer;
-}
+/*
+int integer = Integer();
+float decimal = Decimal();
+double bigDecimal = BigDecimal();
+char letter = Letter();
+string letters = Letters();
+*/

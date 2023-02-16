@@ -13,22 +13,45 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Lab 5">
+      <UniqueIdentifier>{1973eb1b-feec-44db-917b-3bf1216a6472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lab 1">
+      <UniqueIdentifier>{7b2eef88-0e21-4067-9c9a-b62d11344276}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lab 2">
+      <UniqueIdentifier>{6846499b-daa1-479c-ae7a-4bb329cc93d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lab 3">
+      <UniqueIdentifier>{9c0f2f26-1ec7-4216-bc5d-dc939da3374d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lab 4">
+      <UniqueIdentifier>{595681f7-e9d9-4613-a1c9-31c69f1e9427}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="lab5.cpp">
+      <Filter>Lab 5</Filter>
+    </ClCompile>
     <ClCompile Include="lab1.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Lab 1</Filter>
     </ClCompile>
     <ClCompile Include="lab2.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Lab 2</Filter>
     </ClCompile>
     <ClCompile Include="lab3.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Lab 3</Filter>
     </ClCompile>
     <ClCompile Include="lab4.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Lab 4</Filter>
     </ClCompile>
-    <ClCompile Include="lab5.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IntegerMath.h">
+      <Filter>Lab 5</Filter>
+    </ClInclude>
+    <ClInclude Include="DecimalMath.h">
+      <Filter>Lab 5</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
