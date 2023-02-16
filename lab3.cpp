@@ -1,7 +1,5 @@
 /*
-#include <iostream>
-
-using namespace std;
+#include "Common.h"
 
 int main()
 {
@@ -23,25 +21,15 @@ int main()
 	cout << "Welcome to battle simulator 2023" << endl
 	     << "Preparing Player for battle..." << endl << endl;
 
-	// Input player health
-	int playerHealth = 0;
-	cout << "Please enter the player's health: " << endl;
-	cin >> playerHealth;
+	const string damage = "damage";
+	const string health = "health";
+	const string playerName = "player";
+	const string monsterName = "monster";
 
-	// Input player damage
-	int playerDamage = 0;
-	cout << "Please enter the player's damage: " << endl << endl;
-	cin >> playerDamage;
-
-	// Input monster health
-	int monsterHealth = 0;
-	cout << "Please enter the monster's health: " << endl;
-	cin >> monsterHealth;
-
-	// Input monster damage
-	int monsterDamage = 0;
-	cout << "Please enter the monster's damage: " << endl << endl;
-	cin >> monsterDamage;
+	int playerHealth = EnterNumber(playerName, health);
+	int playerDamage = EnterNumber(playerName, damage);
+	int monsterHealth = EnterNumber(monsterName, health);
+	int monsterDamage = EnterNumber(monsterName, damage);
 
 	// Monster attacks player
 	cout << "The monster fearsomely lunges at the player!" << endl;
