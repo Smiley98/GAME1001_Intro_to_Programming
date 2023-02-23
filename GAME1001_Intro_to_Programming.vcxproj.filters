@@ -28,6 +28,9 @@
     <Filter Include="Lab 4">
       <UniqueIdentifier>{595681f7-e9d9-4613-a1c9-31c69f1e9427}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lab 6">
+      <UniqueIdentifier>{9ecf9285-f941-4911-b53b-0bceb005a566}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lab5.cpp">
@@ -44,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="lab4.cpp">
       <Filter>Lab 4</Filter>
+    </ClCompile>
+    <ClCompile Include="lab6.cpp">
+      <Filter>Lab 6</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
