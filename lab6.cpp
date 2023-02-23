@@ -14,6 +14,9 @@ int main()
 	std::ifstream inFile("test.txt");
 	wins = -1; loses = -1; draws = -1;
 	inFile >> wins >> loses >> draws;
+	inFile.close();
+
+	outFile.open("test.txt", std::ios::out | std::ios::trunc);
 
 	return 0;
 }
