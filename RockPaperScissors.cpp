@@ -2,6 +2,7 @@
 // 2. Repeat play
 // 3. Read & store scores
 
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -97,7 +98,7 @@ int main()
 	}
 
 	return 0;
-}
+}//*/
 
 // make sure we make input case-agnostic if we're comparing characters
 //playerInput = toupper(playerInput);

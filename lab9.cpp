@@ -1,11 +1,4 @@
-/*
-void PhysicsUpdate(int& bullet)
-{
-	bullet++;
-}
-
-// native arrays don't know their size so we must explicitly pass their size!
-void UpdateAllBullets(int bullets[], int bulletCount)
+void UpdateBullets(int bullets[], int bulletCount)
 {
 	for (int i = 0; i < bulletCount; i++)
 	{
@@ -15,16 +8,20 @@ void UpdateAllBullets(int bullets[], int bulletCount)
 
 int main()
 {
-	// 2 initialization options
-	// 1: brace-initialization (manual)
-	// 2: loop-initialization (automatic)
+	// Just like regular variables, arrays are uninitialized by default.
+	// You want to ensure they're zero-initialized at minimum by adding "{}".
+	//int testUninitialized;
+	//int testInitialized = 0;
+	//int bulletsUninitialized[9];
+	//int bulletsInitialized[9]{};
 
-	// always use "{}" to zero-initialize memory!
+	// If we know what values we want our array to contain at the time of initialization,
+	// we simply assign them to their respective indices within the curly braces!
 	const int bulletCount = 9;
-	int bulletsX[bulletCount]{};
-	int bulletsY[bulletCount]{}; 
+	int bulletsX[bulletCount]{ 1, 0, 0, 4, 1, 1, 1, 8, 9};
+	int bulletsY[bulletCount]{ 9, 3, 3, 6, 5, 5, 2, 2, 2};
 
-	// Manual version
+	// Similarly, we can reassign indices at runtime
 	bulletsX[0] = 0;
 	bulletsX[1] = 1;
 	bulletsX[2] = 2;
@@ -34,73 +31,26 @@ int main()
 	bulletsX[6] = 6;
 	bulletsX[7] = 7;
 	bulletsX[8] = 8;
-	bulletsY[0] = 100 + 0;
-	bulletsY[1] = 100 + 1;
-	bulletsY[2] = 100 + 2;
-	bulletsY[3] = 100 + 3;
-	bulletsY[4] = 100 + 4;
-	bulletsY[5] = 100 + 5;
-	bulletsY[6] = 100 + 6;
-	bulletsY[7] = 100 + 7;
-	bulletsY[8] = 100 + 8;
 
-	// we don't like this
-	int bullet1x;
-	int bullet2x;
-	int bullet3x;
-	PhysicsUpdate(bullet1x);
-	PhysicsUpdate(bullet2x);
-	PhysicsUpdate(bullet3x);
+	bulletsY[0] = 8;
+	bulletsY[1] = 7;
+	bulletsY[2] = 6;
+	bulletsY[3] = 5;
+	bulletsY[4] = 4;
+	bulletsY[5] = 3;
+	bulletsY[6] = 2;
+	bulletsY[7] = 1;
+	bulletsY[8] = 0;
 
-	// Automatic version
+	// If there's a pattern to how we want to assign our array indices, use a for-loop!
 	for (int i = 0; i < 9; i++)
 	{
-		bulletsX[i] = i;
-		bulletsY[i] = 100 + i;
-
-		// we very much like this!
-		PhysicsUpdate(bulletsX[i]);
+		bulletsX[i] = 8 - i;
+		bulletsY[i] = i;
 	}
 
-	// Passing an array to a function
-	UpdateAllBullets(bulletsX, bulletCount);
-	UpdateAllBullets(bulletsY, bulletCount);
+	UpdateBullets(bulletsX, bulletCount);
+	UpdateBullets(bulletsY, bulletCount);
 
 	return 0;
-}//*/
-
-// Furthermore, instead of making arrays for each piece of data,
-// we can actually make what's called an "object" to create custom data!
-// 
-// Hence, we can do
-// Bullet bullets[9];
-// instead of 
-//int bulletsX[9];
-//int bulletsY[9];
-// 
-//struct Bullet
-//{
-//	int x;
-//	int y;
-//};
-
-// How our code looks for making a large number of things without arrays (bad)
-//int bullet1x = 0;
-//int bullet2x = 0;
-//int bullet3x = 0;
-//int bullet4x = 0;
-//int bullet5x = 0;
-//int bullet6x = 0;
-//int bullet7x = 0;
-//int bullet8x = 0;
-//int bullet9x = 0;
-//
-//int bullet1y = 0;
-//int bullet2y = 0;
-//int bullet3y = 0;
-//int bullet4y = 0;
-//int bullet5y = 0;
-//int bullet6y = 0;
-//int bullet7y = 0;
-//int bullet8y = 0;
-//int bullet9y = 0;
+}
