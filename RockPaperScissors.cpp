@@ -2,6 +2,7 @@
 // 2. Repeat logic
 // 3. Save/load game
 
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -90,7 +91,7 @@ int main()
 	}
 
 	return 0;
-}
+}//*/
 
 // arrays are cool because we can use them to avoid switch statements like this!
 /*

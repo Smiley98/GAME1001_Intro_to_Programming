@@ -133,6 +133,7 @@
     <ClCompile Include="lab4.cpp" />
     <ClCompile Include="lab5.cpp" />
     <ClCompile Include="lab6.cpp" />
+    <ClCompile Include="lab9.cpp" />
     <ClCompile Include="RockPaperScissors.cpp" />
   </ItemGroup>
   <ItemGroup>

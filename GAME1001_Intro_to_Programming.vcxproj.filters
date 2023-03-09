@@ -60,6 +60,9 @@
     <ClCompile Include="RockPaperScissors.cpp">
       <Filter>Assignment 1</Filter>
     </ClCompile>
+    <ClCompile Include="lab9.cpp">
+      <Filter>Lab 9</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IntegerMath.h">
