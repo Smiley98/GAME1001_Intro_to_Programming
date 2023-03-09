@@ -1,3 +1,4 @@
+/*
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -8,7 +9,7 @@ int main()
 	std::cout << "Please enter a file name." << std::endl;
 	std::string fileName;
 	std::getline(std::cin, fileName);
-	fileName += ".txt";
+	fileName += ".abcdefg";
 
 	// 2. Test if the file already exists (is_open() == true). Handle operations accordingly.
 	int wins, loses, draws;
@@ -19,10 +20,6 @@ int main()
 		std::cout << "Reading the previous game's score..." << std::endl;
 		inFile >> wins >> loses >> draws;
 		std::cout << "Wins: " << wins << std::endl << "Loses: " << loses << std::endl << "Draws: " << draws << std::endl;
-
-		// (You may want to truncate existing files after reading in their data for assignment 1.
-		// This way there will only ever be 1 set of data in your files!)
-		// std::ofstream outFile.open(fileName, std::ios::out | std::ios::trunc);
 	}
 	else
 	{
@@ -33,9 +30,9 @@ int main()
 	}
 	
 	// 3. Create/open existing file and write to it.
-	std::ofstream outFile(fileName);
+	std::ofstream outFile(fileName, std::ios::out | std::ios::trunc);
 	outFile << wins << " " << loses << " " << draws << " ";
 	outFile.close();
 
 	return 0;
-}
+}//*/

@@ -31,6 +31,12 @@
     <Filter Include="Lab 6">
       <UniqueIdentifier>{9ecf9285-f941-4911-b53b-0bceb005a566}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assignment 1">
+      <UniqueIdentifier>{85f2493e-40b4-4426-bdd6-8f4091aa8ae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lab 9">
+      <UniqueIdentifier>{d94784ae-0d34-4955-9922-0ddbff234336}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lab5.cpp">
@@ -50,6 +56,9 @@
     </ClCompile>
     <ClCompile Include="lab6.cpp">
       <Filter>Lab 6</Filter>
+    </ClCompile>
+    <ClCompile Include="RockPaperScissors.cpp">
+      <Filter>Assignment 1</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
