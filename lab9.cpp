@@ -1,4 +1,4 @@
-
+/*
 void PhysicsUpdate(int& bullet)
 {
 	bullet++;
@@ -67,7 +67,7 @@ int main()
 	UpdateAllBullets(bulletsY, bulletCount);
 
 	return 0;
-}
+}//*/
 
 // Furthermore, instead of making arrays for each piece of data,
 // we can actually make what's called an "object" to create custom data!

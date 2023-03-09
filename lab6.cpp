@@ -9,7 +9,7 @@ int main()
 	std::cout << "Please enter a file name." << std::endl;
 	std::string fileName;
 	std::getline(std::cin, fileName);
-	fileName += ".abcdefg";
+	fileName += ".txt";
 
 	// 2. Test if the file already exists (is_open() == true). Handle operations accordingly.
 	int wins, loses, draws;

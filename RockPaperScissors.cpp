@@ -1,8 +1,7 @@
-// 1. Rock Paper Scissors logic
-// 2. Repeat logic
-// 3. Save/load game
+// 1. Barebones RPC
+// 2. Repeat play
+// 3. Read & store scores
 
-/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -16,30 +15,47 @@ enum Choice
 	SCISSORS
 };
 
+void PrintScores(int wins, int loses, int draws)
+{
+	cout << "Scores: " << wins << " wins, " << loses << " loses, " << draws << " draws." << endl;
+}
+
 int main()
 {
-	// seed random generator with current time
-	srand(time(nullptr));
+	srand(time(0));
 
-	// get player input
-	cout << "What is your name?" << endl;
 	string playerName;
-	getline(cin, playerName);
-	playerName += ".txt";
+	do {
+		cout << "What is your name?" << endl;
+		getline(cin, playerName);
+	} while (playerName.size() < 8);
 
-	// default scores to 0
 	int wins, loses, draws;
 	wins = loses = draws = 0;
-
-	// load scores if they were previously saved
-	ifstream inScores(playerName);
+	string userPassword;
+	ifstream inScores(playerName + ".txt");
 	if (inScores.is_open())
 	{
+		string filePassword;
+		inScores >> filePassword;
+
+		do {
+			cout << "Please enter your password" << endl;
+			getline(cin, userPassword);
+		} while (userPassword != filePassword);
+
+		cout << "Welcome back " + playerName << endl;
 		inScores >> wins >> loses >> draws;
+		PrintScores(wins, loses, draws);
 		inScores.close();
 	}
+	else
+	{
+		cout << "Welcome to rock paper scissors you noob" << endl;
+		cout << "Please enter your password" << endl;
+		getline(cin, userPassword);
+	}
 
-	// loop until the player quits
 	char play = 'Y';
 	while (play == 'Y')
 	{
@@ -47,22 +63,19 @@ int main()
 		int playerInput;
 		cin >> playerInput;
 
-		// only ever 1 2 and 3
-		Choice aiChoice = (Choice)(rand() % 3 + 1);
-		string logs[3]{ "Rock", "Paper", "Scissors" };
-		// map choices 1 2 and 3 to indices 0 1 and 2
-		cout << "AI choise " << logs[aiChoice - 1] << endl;
+		// rand() % 3 will be either 0, 1, or 2
+		int aiInput = rand() % 3 + 1;
+		string choices[3]{ "Rock", "Paper", "Scissors" };
+		cout << "AI chose " << choices[aiInput - 1] << endl;
 
-		// evaluate score (rps logic)
-		Choice playerChoice = (Choice)playerInput;
-		if (aiChoice == playerChoice)
+		if (playerInput == aiInput) // test for tie
 		{
 			cout << "Tie!" << endl;
 			draws++;
 		}
-		else if (playerChoice == ROCK && aiChoice == SCISSORS ||
-			playerChoice == SCISSORS && aiChoice == PAPER ||
-			playerChoice == PAPER && aiChoice == ROCK)
+		else if (playerInput == ROCK && aiInput == SCISSORS ||
+			playerInput == PAPER && aiInput == ROCK ||
+			playerInput == SCISSORS && aiInput == PAPER)
 		{
 			cout << "Win :)" << endl;
 			wins++;
@@ -72,42 +85,36 @@ int main()
 			cout << "Loss :(" << endl;
 			loses++;
 		}
+		PrintScores(wins, loses, draws);
 
-		// log updated scores
-		cout << "Scores: " <<
-			wins << " wins, " <<
-			loses << " loses, " <<
-			draws << " draws." << endl;
-
-		// save updated scores
-		ofstream outScores(playerName, ios::out | ios::trunc);
-		outScores << wins << ' ' << loses << ' ' << draws;
+		ofstream outScores(playerName + ".txt", ios::out | ios::trunc);
+		outScores << userPassword << ' ' << wins << ' ' << loses << ' ' << draws;
 		outScores.close();
 
-		// replay?
 		cout << "Would you like to play again? [y/n]" << endl;
 		cin >> play;
 		play = toupper(play);
 	}
 
 	return 0;
-}//*/
-
-// arrays are cool because we can use them to avoid switch statements like this!
-/*
-string aiLog;
-switch (aiChoice)
-{
-case ROCK:
-	aiLog = "Rock";
-	break;
-case PAPER:
-	aiLog = "Paper";
-	break;
-case SCISSORS:
-	aiLog = "Scissors";
-	break;
-default:
-	break;
 }
-*/
+
+// make sure we make input case-agnostic if we're comparing characters
+//playerInput = toupper(playerInput);
+
+// instead of this large switch statement, we can condence this to a small array!
+//string log;
+//switch (aiInput)
+//{
+//case ROCK:
+//	log = "Rock";
+//	break;
+//
+//case PAPER:
+//	log = "Paper";
+//	break;
+//
+//case SCISSORS:
+//	log = "Scissors";
+//	break;
+//}
